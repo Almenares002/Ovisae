@@ -1,0 +1,240 @@
+/* --- Navbar General --- */
+
+.glass-navbar {
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px 0;
+  transition: all 0.4s ease;
+  z-index: 1030;
+}
+
+/* Efecto al hacer scroll (se vuelve un poco más oscuro) */
+
+.glass-navbar.scrolled {
+  background: rgba(5, 5, 5, 0.9);
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Logo --- */
+
+.logo-placeholder-nav {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* --- Enlaces Principales --- */
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+  color: #ffffff;
+}
+
+/* Línea inferior animada en los enlaces */
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #4a90e2;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
+  width: 60%;
+}
+
+/* --- Dropdown de Servicios --- */
+
+.custom-dropdown {
+  background: rgba(20, 25, 35, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  padding: 10px;
+  margin-top: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.custom-dropdown .dropdown-item {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background: rgba(74, 144, 226, 0.15);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.custom-dropdown .dropdown-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 8px 0;
+}
+
+.custom-dropdown .view-all-link {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.custom-dropdown .view-all-link:hover {
+  background: transparent;
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* Evitar que la flecha del dropdown se vea mal */
+
+.navbar-nav .dropdown-toggle::after {
+  vertical-align: middle;
+  margin-left: 5px;
+  border-top-color: currentColor;
+}
+
+/* --- Botón CTA y Teléfono --- */
+
+.nav-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-phone-link:hover {
+  color: #b0d552;
+}
+
+.btn-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #9fcb2d 0%, #1f6d0a 100%);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(159,203,45,0.45);
+  transition: all 0.3s ease;
+}
+
+.btn-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(148,235,37,0.3);
+  color: #ffffff;
+}
+
+/* --- Botón Hamburguesa (Móvil) --- */
+
+.custom-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.custom-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* --- Responsive (Móvil y Tablet) --- */
+
+@media (max-width: 991px) {
+  .glass-navbar {
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(20, 25, 35, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .custom-dropdown {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    box-shadow: none;
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .d-flex.align-items-center.gap-3 {
+    flex-direction: column;
+    align-items: stretch !important;
+    margin-top: 20px;
+    gap: 15px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-phone-link {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn-nav-cta {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}
+
