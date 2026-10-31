@@ -1,0 +1,458 @@
+/* ==========================================
+   SUBPÁGINA DE PROYECTO
+   ========================================== */
+
+/* --- 1. Hero Visual --- */
+
+.project-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.6) 60%, #050505 100%);
+  z-index: 1;
+}
+
+.project-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.project-badge {
+  display: inline-block;
+  background: rgba(74, 144, 226, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 144, 226, 0.4);
+  color: #4a90e2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+.btn-scroll-down {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.btn-scroll-down:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+/* --- Breadcrumbs --- */
+
+.breadcrumbs-bar {
+  background-color: #050505;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+
+.breadcrumb-item a:hover {
+  color: #4a90e2;
+}
+
+.breadcrumb-item.active {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- 2. Ficha Técnica --- */
+
+.tech-specs-section {
+  background-color: #080a0e;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.spec-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+.spec-item h5 {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.spec-item p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.status-delivered {
+  color: #25d366 !important;
+  font-weight: 600;
+}
+
+/* --- 3. Resumen del Proyecto --- */
+
+.project-summary-section {
+  background-color: #050505;
+  padding: 100px 0;
+}
+
+.section-title-dark {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.summary-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* --- 4. Galería Masonry y Lightbox --- */
+
+.project-gallery-section {
+  background-color: #080a0e;
+  padding: 100px 0;
+}
+
+.gallery-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}
+
+/* Masonry CSS */
+
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
+.gallery-item {
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  break-inside: avoid;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.9);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* --- 5. Documentación --- */
+
+.project-docs-section {
+  background-color: #050505;
+  padding: 100px 0;
+}
+
+.docs-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}
+
+.doc-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(20, 25, 35, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.doc-card:hover {
+  background: rgba(30, 40, 55, 0.6);
+  border-color: rgba(74, 144, 226, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.doc-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(74, 144, 226, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4a90e2;
+  flex-shrink: 0;
+}
+
+.doc-info {
+  flex-grow: 1;
+}
+
+.doc-info h4 {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+}
+
+.doc-info span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.doc-download-icon {
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease;
+}
+
+.doc-card:hover .doc-download-icon {
+  color: #4a90e2;
+}
+
+/* --- 6. Proyectos Relacionados --- */
+
+.related-projects-section {
+  background-color: #080a0e;
+  padding: 100px 0;
+}
+
+.related-card {
+  background: rgba(20, 25, 35, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.related-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.related-img {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.related-card:hover .related-img {
+  transform: scale(1.05);
+}
+
+.related-content {
+  padding: 25px;
+}
+
+.related-content h4 {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.related-content p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.btn-related {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.btn-related:hover {
+  color: #ffffff;
+}
+
+/* --- 7. Navegación y CTA Final --- */
+
+.project-navigation-section {
+  background-color: #050505;
+  padding: 60px 0 100px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.nav-project-btn:hover {
+  color: #4a90e2;
+}
+
+.nav-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-text span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.nav-text strong {
+  font-size: 1.1rem;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+}
+
+.nav-project-btn:hover .nav-text strong {
+  color: #4a90e2;
+}
+
+/* Responsive general para la subpágina */
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-hero {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title-dark {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-summary-section, .project-gallery-section, .project-docs-section, .related-projects-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-project-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .next-btn {
+    align-items: flex-end;
+  }
+}
+

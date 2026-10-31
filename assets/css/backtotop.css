@@ -1,0 +1,82 @@
+/* --- Botón Volver Arriba (Back to Top) --- */
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  z-index: 9999;
+  background: rgba(20, 25, 35, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  border-left-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(74, 144, 226, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.03);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Estado visible (cuando se hace scroll) */
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Efecto Hover --- */
+
+.back-to-top:hover {
+  background: rgba(148,235,37,0.3);
+  border-color: rgba(120, 170, 255, 0.6);
+  color: #ffffff;
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(186,226,74,0.36), inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* --- Efecto Press (Active) --- */
+
+.back-to-top:active {
+  transform: translateY(-1px) scale(0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 15px rgba(74, 144, 226, 0.3), inset 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación del icono de flecha al hacer hover */
+
+.back-to-top svg {
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 576px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  .back-to-top svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+

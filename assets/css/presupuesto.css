@@ -1,0 +1,730 @@
+/* ==========================================
+   VARIABLES Y ESTILOS BASE
+   ========================================== */
+
+:root {
+  --bg-dark: #050505;
+  --bg-light: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --accent: #4a90e2;
+  --accent-dark: #2563eb;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --text-muted-dark: rgba(255, 255, 255, 0.6);
+  --text-muted-light: #555555;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, .btn-submit-quote, .btn-alt-primary {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ==========================================
+   SECCIÓN 1: HERO (OSCURO)
+   ========================================== */
+
+.quote-hero {
+  position: relative;
+  background-color: var(--bg-dark);
+  padding: 140px 0 100px 0;
+  overflow: hidden;
+}
+
+.glow-orb-hero {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-badge {
+  display: inline-block;
+  background: rgba(74, 144, 226, 0.15);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  color: var(--accent);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.quote-title {
+  color: var(--text-light);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.quote-subtitle {
+  color: var(--text-muted-dark);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.quote-trust-microcopy {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   SECCIÓN 2: TRUST BAR (CLARO)
+   ========================================== */
+
+.trust-bar-section {
+  background: var(--bg-light);
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.trust-item {
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-5px);
+}
+
+.trust-icon-box {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px auto;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-placeholder {
+  width: 12px;
+  height: 12px;
+  background: rgba(37, 99, 235, 0.4);
+  border-radius: 50%;
+}
+
+.trust-item h4 {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.trust-item p {
+  color: var(--text-muted-light);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================
+   SECCIÓN 3: FORMULARIO (OSCURO)
+   ========================================== */
+
+.quote-main-section {
+  background-color: var(--bg-dark);
+  padding: 100px 0;
+}
+
+.glass-form-panel, .glass-trust-panel {
+  background: rgba(20, 25, 35, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-left-color: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
+
+.form-title {
+  color: var(--text-light);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  color: var(--text-muted-dark);
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.form-block {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-block:last-of-type {
+  border-bottom: none;
+}
+
+.block-title {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: var(--accent);
+}
+
+.custom-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--text-light);
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.2);
+  color: var(--text-light);
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-input option {
+  background-color: #141923;
+  color: #fff;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.custom-check input {
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.custom-checkbox .form-check-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-checkbox .form-check-input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.custom-checkbox .form-check-label {
+  color: var(--text-muted-dark);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.file-input::file-selector-button {
+  background: rgba(74, 144, 226, 0.2);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.form-hint {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.btn-submit-quote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 18px 36px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit-quote:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6);
+}
+
+.form-message {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.success-message {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  color: #fff;
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #fff;
+}
+
+/* PANEL DE CONFIANZA */
+
+.glass-trust-panel {
+  padding: 30px;
+}
+
+.trust-panel-block {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-panel-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.glass-trust-panel h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.trust-text {
+  color: var(--text-muted-dark);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.testimonial-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.stars {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.quote {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.author {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-method {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.contact-icon-box {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icon-box.whatsapp {
+  background: rgba(37, 211, 102, 0.1);
+}
+
+.contact-icon-box.whatsapp .icon-placeholder {
+  background: #25d366;
+}
+
+.contact-method strong {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.contact-method a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.contact-method a:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+}
+
+.company-data {
+  padding-top: 10px;
+}
+
+/* ==========================================
+   SECCIÓN 4: PROCESO (CLARO)
+   ========================================== */
+
+.process-section-light {
+  background: var(--bg-light);
+  padding: 100px 0;
+}
+
+.section-title-light {
+  color: var(--text-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-subtitle-light {
+  color: var(--text-muted-light);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.process-step-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.process-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.step-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(37, 99, 235, 0.15);
+  line-height: 1;
+  margin-bottom: 15px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.process-step-card h4 {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.process-step-card p {
+  color: var(--text-muted-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.process-microcopy {
+  color: var(--text-muted-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ==========================================
+   SECCIÓN 5: CANALES ALTERNATIVOS (OSCURO)
+   ========================================== */
+
+.alt-channels-section {
+  background-color: var(--bg-dark);
+  padding: 100px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title-dark {
+  color: var(--text-light);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-subtitle-dark {
+  color: var(--text-muted-dark);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn-alt-primary, .btn-alt-secondary {
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-alt-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.btn-alt-primary:hover {
+  transform: translateY(-3px);
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6);
+}
+
+.btn-alt-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-alt-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+/* ==========================================
+   SECCIÓN 6: FAQ (CLARO)
+   ========================================== */
+
+.faq-section-light {
+  background: var(--bg-light);
+  padding: 100px 0;
+}
+
+.faq-light-container {
+  margin-top: 40px;
+}
+
+.faq-light-item {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.faq-light-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.faq-light-item.active {
+  border-color: rgba(37,99,235,0.3);
+  background: #fff;
+}
+
+.faq-light-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 25px;
+  cursor: pointer;
+}
+
+.faq-light-question {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.faq-light-item:hover .faq-light-question {
+  color: var(--accent);
+}
+
+.faq-light-chevron {
+  color: #a0aec0;
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.faq-light-item.active .faq-light-chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.faq-light-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  padding: 0 25px;
+}
+
+.faq-light-body p {
+  color: var(--text-muted-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  padding-bottom: 25px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.faq-light-item.active .faq-light-body {
+  max-height: 200px;
+}
+
+/* ==========================================
+   SECCIÓN 7: CTA FINAL (OSCURO)
+   ========================================== */
+
+.final-cta-section {
+  background-color: var(--bg-dark);
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 991px) {
+  .quote-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .glass-form-panel, .glass-trust-panel {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .glass-trust-panel {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .section-title-light, .section-title-dark {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-hero {
+    padding: 100px 0 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-trust-microcopy {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .block-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-alt-primary, .btn-alt-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
