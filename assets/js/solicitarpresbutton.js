@@ -1,31 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const portalModal = document.getElementById('portalModal');
-    const iframe = document.getElementById('portalIframe');
-    const loader = document.getElementById('portalLoader');
-    
-    // URL de tu Google Apps Script
-    const portalUrl = "https://script.google.com/macros/s/AKfycbz18NXQE7foZBFmCplAdJT6_NbK1QSCwVXFrg2CCExyG7PQxq9J9PKo7ZB5K9V3tt25/exec?portal=client";
+// Quote buttons: open the OVIS intake form in a new tab.
+// The form is a Google Apps Script web app; embedded in an iframe it fails on
+// iPhone Safari and other browsers that block third-party cookies, so we no
+// longer open it inside the in-page modal.
+(function () {
+    var FORM_URL = "https://start.ovisae.com";
 
-    // 1. Al abrir el modal, empezamos a cargar el iframe
-    portalModal.addEventListener('show.bs.modal', function () {
-        // Mostramos el loader y reseteamos el iframe
-        loader.style.display = 'block';
-        iframe.classList.remove('loaded');
-        iframe.src = portalUrl;
-    });
+    function openForm(e) {
+        if (e) e.preventDefault();
+        var w = window.open(FORM_URL, "_blank", "noopener");
+        if (!w) window.location.href = FORM_URL;
+    }
 
-    // 2. Cuando el iframe termina de cargar, ocultamos el loader
-    iframe.addEventListener('load', function() {
-        // Comprobamos que no sea la página en blanco inicial
-        if (iframe.src !== 'about:blank') {
-            loader.style.display = 'none';
-            iframe.classList.add('loaded');
+    document.addEventListener('DOMContentLoaded', function () {
+        // Any button still wired to the old modal opens the form instead.
+        document.querySelectorAll('[data-bs-target="#portalModal"]').forEach(function (el) {
+            el.removeAttribute('data-bs-toggle');
+            el.removeAttribute('data-bs-target');
+            if (el.tagName === 'A') {
+                el.setAttribute('href', FORM_URL);
+                el.setAttribute('target', '_blank');
+                el.setAttribute('rel', 'noopener');
+            } else {
+                el.addEventListener('click', openForm);
+            }
+        });
+
+        // If something still opens the modal, cancel it and open the form.
+        var portalModal = document.getElementById('portalModal');
+        if (portalModal) {
+            portalModal.addEventListener('show.bs.modal', function (e) { openForm(e); });
         }
     });
-
-    // 3. Al cerrar el modal, vaciamos el iframe para detener procesos y liberar memoria
-    portalModal.addEventListener('hidden.bs.modal', function () {
-        iframe.src = "about:blank";
-        iframe.classList.remove('loaded');
-    });
-});
+})();
