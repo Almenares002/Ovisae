@@ -64,6 +64,7 @@
     <link rel="stylesheet" href="assets/css/serviciosstyle.css">
     <link rel="stylesheet" href="assets/css/solicitarpresbutton.css">
     <link rel="stylesheet" href="assets/css/tiposdeproyecto.css">
+    <link rel="stylesheet" href="assets/css/contact-form.css">
 </head>
 
 <body style="background: #ffffff;">
@@ -835,124 +836,94 @@
             </div>
         </div>
     </section>
-    <section id="contacto" class="contact-section">
-        <div class="glow-orb-contact"></div>
-        <div class="container contact-container">
-            <div class="row text-center mb-5">
-                <div class="col-12"><span class="pre-title-contact">CONTACT</span>
-                    <h1 class="hero-title-contact">Let's talk about your project</h1>
-                    <p class="hero-subtitle-contact"> Tell us what you need and we'll send a clear proposal. No commitment. </p>
-                    <p class="microcopy-contact"><span class="check-icon" style="color:#b0d552;">✔</span> Fast response <span class="dot-separator">·</span><span class="check-icon" style="color:#b0d552;">✔</span> Free estimate <span class="dot-separator">·</span><span class="check-icon" style="color:#b0d552;">✔</span> Guaranteed confidentiality </p>
-                </div>
+    <section id="contacto" class="ovis-contact" lang="en">
+        <div class="container">
+            <div class="oc-head">
+                <span class="oc-eyebrow">Contact</span>
+                <h2 class="oc-title">Let's talk about your project</h2>
+                <p class="oc-sub">Tell us what you need and we'll get back to you with a clear proposal. No commitment.</p>
+                <ul class="oc-badges"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fast response</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free estimate</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Confidential</li></ul>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="glass-form-panel">
-                        <h2 class="form-title">Request your quote</h2>
-                        <p class="form-subtitle">Complete the form and we will contact you.</p>
-                        <form id="contactForm" action="https://formspree.io/f/mzeebpkb" method="POST" enctype="multipart/form-data" class="contact-form">
-                            <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label">Full Name <span class="required">*</span></label><input class="form-control custom-input" type="text" name="nombre_completo" placeholder="Your first and last name" required=""></div>
-                                <div class="col-md-6"><label class="form-label">Email <span class="required">*</span></label><input class="form-control custom-input" type="email" name="email" placeholder="you@email.com" required=""></div>
-                                <div class="col-md-6"><label class="form-label">Phone <span class="required">*</span></label><input class="form-control custom-input" type="tel" name="telefono" placeholder="(305) 000-0000" required=""></div>
-                                <div class="col-md-6"><label class="form-label">Company (optional)</label><input class="form-control custom-input" type="text" name="empresa" placeholder="Your company name"></div>
-                                <div class="col-md-6"><label class="form-label">Project type <span class="required">*</span></label><select class="form-select custom-input" name="tipo_proyecto" required="">
-                                        <option value="" selected="">Select an option</option>
-                                        <option value="New construction">New construction</option>
-                                        <option value="Remodeling">Remodeling</option>
-                                        <option value="Addition">Addition</option>
-                                        <option value="After-the-Fact / Regularization">After-the-Fact / Regularization</option>
-                                        <option value="Inspection / Assessment">Inspection / Assessment</option>
-                                        <option value="Consulting">Consulting</option>
-                                        <option value="Other">Other</option>
-                                    </select></div>
-                                <div class="col-md-6"><label class="form-label">Project location <span class="required">*</span></label><input class="form-control custom-input" type="text" name="ubicacion" placeholder="City, county, FL" required=""></div>
-                                <div class="col-12"><label class="form-label">Required service <span class="required">*</span></label><select class="form-select custom-input" multiple="" name="servicio_requerido[]" required="" size="4">
-                                        <option value="Architecture">Architecture</option>
-                                        <option value="Structural">Structural</option>
-                                        <option value="Mechanical (HVAC)">Mechanical (HVAC)</option>
-                                        <option value="Electrical">Electrical</option>
-                                        <option value="Plumbing">Plumbing</option>
-                                        <option value="Permits and code">Permits and code</option>
-                                        <option value="Field services">Field services</option>
-                                        <option value="Consulting">Consulting</option>
-                                        <option value="Several / Not sure">Several / Not sure</option>
-                                    </select><small class="form-hint">Hold down Ctrl (Windows) or Cmd (Mac) to select multiple options.</small></div>
-                                <div class="col-md-6"><label class="form-label">Estimated budget</label><select class="form-select custom-input" name="presupuesto_estimado">
-                                        <option value="" selected="">Select an option</option>
-                                        <option value="Less than $5,000">Less than $5,000</option>
-                                        <option value="$5,000 – $15,000">$5,000 – $15,000</option>
-                                        <option value="$15,000 – $50,000">$15,000 – $50,000</option>
-                                        <option value="$50,000 – $150,000">$50,000 – $150,000</option>
-                                        <option value="More than $150,000">More than $150,000</option>
-                                        <option value="I don't know yet">I don't know yet</option>
-                                    </select></div>
-                                <div class="col-md-6"><label class="form-label">Desired timeframe</label><select class="form-select custom-input" name="plazo_deseado">
-                                        <option value="" selected="">Select an option</option>
-                                        <option value="As soon as possible">As soon as possible</option>
-                                        <option value="In 1–2 months">In 1–2 months</option>
-                                        <option value="In 3–6 months">In 3–6 months</option>
-                                        <option value="No defined rush">No defined rush</option>
-                                    </select></div>
-                                <div class="col-12"><label class="form-label">Project description <span class="required">*</span></label><textarea class="form-control custom-input" name="descripcion" placeholder="Briefly tell us about your project, goals, and any relevant details…" required="" rows="4"></textarea></div>
-                                <div class="col-md-6"><label class="form-label">How did you find us?</label><select class="form-select custom-input" name="como_nos_encontraste">
-                                        <option value="" selected="">Select an option</option>
-                                        <option value="Google">Google</option>
-                                        <option value="Referral">Referral</option>
-                                        <option value="Social media">Social media</option>
-                                        <option value="Other">Other</option>
-                                    </select></div>
-                                <div class="col-md-6"><label class="form-label">Attach files</label><input class="form-control custom-input file-input" type="file" accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx,.xls,.xlsx" multiple="" name="archivos[]"><small class="form-hint">Plans, photos, documents (PDF, JPG, DWG — max 20 MB)</small></div>
-                                <div class="col-12 mt-4">
-                                    <div class="form-check custom-checkbox"><input class="form-check-input" type="checkbox" id="privacidad" name="acepto_privacidad" required=""><label class="form-check-label" for="privacidad"> I have read and accept the privacy policy and the processing of my data. <span class="required">*</span></label></div>
-                                    <div class="form-check custom-checkbox"><input class="form-check-input" type="checkbox" id="comunicaciones" name="acepto_comunicaciones"><label class="form-check-label" for="comunicaciones"> I want to receive news and technical content from <strong>OVIS A&amp;E</strong>. </label></div>
+            <div class="oc-card">
+                <aside class="oc-aside">
+                    <h3 class="oc-aside-title">Talk to us directly</h3>
+                    <p class="oc-aside-sub">Prefer a quick call or message? We are here to help.</p>
+                    <ul class="oc-contact-list">
+                        <li><span class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Phone</small><a href="tel:+19543052351">954.305.2351</a></span></li>
+                        <li><span class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span><span><small>Email</small><a href="mailto:info@ovisae.com">info@ovisae.com</a></span></li>
+                        <li><span class="oc-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.66-1.6-.91-2.19-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.44 9.44 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.45-9.47 9.45zm8.06-17.53A11.33 11.33 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2.01.52 3.97 1.52 5.7L.55 23.62l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg></span><span><small>WhatsApp</small><a href="https://wa.me/19543052351" target="_blank" rel="noopener">+1 (954) 305-2351</a></span></li>
+                    </ul>
+                    <a class="oc-wa-btn" href="https://wa.me/19543052351" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.66-1.6-.91-2.19-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.44 9.44 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.45-9.47 9.45zm8.06-17.53A11.33 11.33 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2.01.52 3.97 1.52 5.7L.55 23.62l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>Chat on WhatsApp</a>
+                    <p class="oc-wa-note"><span class="oc-dot"></span>Fast response during business hours</p>
+                    <div class="oc-next">
+                        <h4>What happens next</h4>
+                        <ol><li><span class="oc-step-n">1</span><span>We review your request and any files you send.</span></li><li><span class="oc-step-n">2</span><span>We contact you to clarify scope and details.</span></li><li><span class="oc-step-n">3</span><span>You receive a clear proposal with scope and cost.</span></li></ol>
+                    </div>
+                    <p class="oc-lic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed in Florida · FL CA 40395</p>
+                </aside>
+                <div class="oc-main">
+                    <div class="oc-form-head">
+                        <h3 class="oc-form-title">Request your quote</h3>
+                        <p class="oc-form-sub">Fields marked with * are required. It takes about 2 minutes.</p>
+                    </div>
+                    <form id="ovisContactForm" class="oc-form" action="https://formspree.io/f/mzeebpkb" method="POST" enctype="multipart/form-data" novalidate
+                        data-msg-required="This field is required." data-msg-email="Enter a valid email address." data-msg-tel="Enter a valid phone number." data-msg-svc="Select at least one service." data-msg-consent="Please accept to continue." data-msg-size="Files are larger than 20 MB in total."
+                        data-msg-sending="Sending…" data-msg-fields="Please check the highlighted fields.">
+                        <input type="hidden" name="_subject" value="New quote request from ovisae.com (EN)">
+                        <input type="hidden" name="idioma" value="English">
+                        <div class="oc-hp" aria-hidden="true"><label>Website<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+                        <fieldset class="oc-fieldset">
+                            <legend class="oc-legend"><span>1</span>About you</legend>
+                            <div class="oc-grid">
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-nombre_completo">Full name <span class="oc-req" aria-hidden="true">*</span></label><input class="oc-input" id="oc-nombre_completo" type="text" name="nombre_completo" placeholder="First and last name" autocomplete="name" required aria-describedby="oc-nombre_completo-err"><p class="oc-error" id="oc-nombre_completo-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-email">Email <span class="oc-req" aria-hidden="true">*</span></label><input class="oc-input" id="oc-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-describedby="oc-email-err"><p class="oc-error" id="oc-email-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-telefono">Phone <span class="oc-req" aria-hidden="true">*</span></label><input class="oc-input" id="oc-telefono" type="tel" name="telefono" placeholder="(954) 000-0000" autocomplete="tel" required aria-describedby="oc-telefono-err"><p class="oc-error" id="oc-telefono-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-empresa">Company <span class="oc-opt">(optional)</span></label><input class="oc-input" id="oc-empresa" type="text" name="empresa" placeholder="Your company name" autocomplete="organization"><p class="oc-error" id="oc-empresa-err" aria-live="polite"></p></div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="oc-fieldset">
+                            <legend class="oc-legend"><span>2</span>Your project</legend>
+                            <div class="oc-grid">
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-tipo_proyecto">Project type <span class="oc-req" aria-hidden="true">*</span></label><div class="oc-select"><select class="oc-input" id="oc-tipo_proyecto" name="tipo_proyecto" required aria-describedby="oc-tipo_proyecto-err"><option value="" selected>Select an option</option><option value="New construction">New construction</option><option value="Remodeling">Remodeling</option><option value="Addition">Addition</option><option value="After-the-Fact / Regularization">After-the-Fact / Regularization</option><option value="Inspection / Assessment">Inspection / Assessment</option><option value="Consulting">Consulting</option><option value="Other">Other</option></select></div><p class="oc-error" id="oc-tipo_proyecto-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-ubicacion">Project location <span class="oc-req" aria-hidden="true">*</span></label><input class="oc-input" id="oc-ubicacion" type="text" name="ubicacion" placeholder="City, county, FL" required aria-describedby="oc-ubicacion-err"><p class="oc-error" id="oc-ubicacion-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-full" role="group" aria-labelledby="oc-svc-label">
+                                    <span class="oc-label" id="oc-svc-label">Services needed <span class="oc-req" aria-hidden="true">*</span></span>
+                                    <p class="oc-hint">Select all that apply.</p>
+                                    <div class="oc-chips" id="oc-servicios"><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Architecture"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Architecture</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Structural"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Structural</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Mechanical (HVAC)"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Mechanical (HVAC)</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Electrical"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Electrical</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Plumbing"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plumbing</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Permits and code"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Permits and code</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Field services"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Field services</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Consulting"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Consulting</span></label><label class="oc-chip"><input type="checkbox" name="servicio_requerido[]" value="Several / Not sure"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Several / Not sure</span></label></div>
+                                    <p class="oc-error" id="oc-servicios-err" aria-live="polite"></p>
                                 </div>
-                                <div class="col-12 mt-4"><button type="submit" class="btn-submit-contact"> Send request <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></button>
-                                    <p class="form-microcopy"> By submitting you accept our privacy policy. Your data is safe and we do not share it with third parties. </p>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-presupuesto_estimado">Estimated budget</label><div class="oc-select"><select class="oc-input" id="oc-presupuesto_estimado" name="presupuesto_estimado" aria-describedby="oc-presupuesto_estimado-err"><option value="" selected>Select an option</option><option value="Less than $5,000">Less than $5,000</option><option value="$5,000 – $15,000">$5,000 – $15,000</option><option value="$15,000 – $50,000">$15,000 – $50,000</option><option value="$50,000 – $150,000">$50,000 – $150,000</option><option value="More than $150,000">More than $150,000</option><option value="I don't know yet">I don't know yet</option></select></div><p class="oc-error" id="oc-presupuesto_estimado-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-plazo_deseado">Desired timeframe</label><div class="oc-select"><select class="oc-input" id="oc-plazo_deseado" name="plazo_deseado" aria-describedby="oc-plazo_deseado-err"><option value="" selected>Select an option</option><option value="As soon as possible">As soon as possible</option><option value="In 1–2 months">In 1–2 months</option><option value="In 3–6 months">In 3–6 months</option><option value="No defined rush">No defined rush</option></select></div><p class="oc-error" id="oc-plazo_deseado-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-full"><label class="oc-label" for="oc-descripcion">Project description <span class="oc-req" aria-hidden="true">*</span></label><textarea class="oc-input" id="oc-descripcion" name="descripcion" rows="5" placeholder="Briefly tell us about your project, goals and any relevant details…" required aria-describedby="oc-descripcion-err"></textarea><p class="oc-error" id="oc-descripcion-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half"><label class="oc-label" for="oc-como_nos_encontraste">How did you find us?</label><div class="oc-select"><select class="oc-input" id="oc-como_nos_encontraste" name="como_nos_encontraste" aria-describedby="oc-como_nos_encontraste-err"><option value="" selected>Select an option</option><option value="Google">Google</option><option value="Referral">Referral</option><option value="Social media">Social media</option><option value="Other">Other</option></select></div><p class="oc-error" id="oc-como_nos_encontraste-err" aria-live="polite"></p></div>
+                                <div class="oc-field oc-half">
+                                    <span class="oc-label">Attach files <span class="oc-opt">(optional)</span></span>
+                                    <label class="oc-drop" for="oc-archivos">
+                                        <span class="oc-drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg></span>
+                                        <span class="oc-drop-text"><strong data-default="Click to upload plans, photos or documents">Click to upload plans, photos or documents</strong><small>PDF, JPG, PNG, DWG, DOC, XLS · up to 20 MB in total</small></span>
+                                    </label>
+                                    <input class="oc-file" id="oc-archivos" type="file" name="archivos[]" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx,.xls,.xlsx" aria-describedby="oc-archivos-err">
+                                    <p class="oc-error" id="oc-archivos-err" aria-live="polite"></p>
                                 </div>
                             </div>
-                            <div id="formSuccessMessage" class="form-message success-message" style="display:none;">
-                                <h4>✅ Thank you, <span id="successName"></span>!</h4>
-                                <p>We have received your request. We will contact you shortly.</p>
-                            </div>
-                            <div id="formErrorMessage" class="form-message error-message" style="display:none;">
-                                <h4>⚠️ Something went wrong.</h4>
-                                <p>Check the marked fields or write to us directly at <a href="mailto:info@ovisae.com">info@ovisae.com</a>.</p>
-                            </div>
-                        </form>
+                        </fieldset>
+                        <div class="oc-checks">
+                            <label class="oc-check"><input type="checkbox" id="oc-acepto_privacidad" name="acepto_privacidad" value="Sí" required><span class="oc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>I agree to be contacted by OVIS A&amp;E about this request. <span class="oc-req" aria-hidden="true">*</span></span></label>
+                            <p class="oc-error" id="oc-acepto_privacidad-err" aria-live="polite"></p>
+                            <label class="oc-check"><input type="checkbox" name="acepto_comunicaciones" value="Sí"><span class="oc-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Send me news and technical content from OVIS A&amp;E.</span></label>
+                        </div>
+                        <div class="oc-alert" id="oc-alert" role="alert" hidden></div>
+                        <button type="submit" class="oc-submit"><span class="oc-submit-label">Send request</span><span class="oc-spinner" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+                        <p class="oc-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is kept confidential and is never shared with third parties.</p>
+                    </form>
+                    <div class="oc-success" id="oc-success" hidden tabindex="-1">
+                        <div class="oc-success-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+                        <h3 data-template="Thank you{name}!">Thank you!</h3>
+                        <p>We received your request and will contact you shortly by email or phone.</p>
+                        <p class="oc-success-files" hidden>Your files could not be attached, so please email them to <a href="mailto:info@ovisae.com">info@ovisae.com</a>.</p>
+                        <button type="button" class="oc-again">Send another request</button>
                     </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="glass-contact-info">
-                        <h2 class="info-title">Contact Information</h2>
-                        <div class="info-block">
-                            <div class="info-icon-box"><i class="icon ion-ios-telephone-outline" style="font-size:30px;color:rgba(74,144,226,0.3);"></i></div>
-                            <div class="info-content">
-                                <h4>Phone</h4>
-                                <p><a href="tel:+19543052351">+1 (954) 305-2351</a></p>
-                            </div>
-                        </div>
-                        <div class="info-block">
-                            <div class="text-center info-icon-box"><i class="icon ion-ios-email-outline" style="font-size:30px;color:rgba(74,144,226,0.3);"></i></div>
-                            <div class="info-content">
-                                <h4>Email</h4>
-                                <p><a href="mailto:info@ovisae.com">info@ovisae.com</a></p>
-                            </div>
-                        </div>
-                        <div class="info-block">
-                            <div class="info-icon-box whatsapp-icon"><i class="icon ion-social-whatsapp-outline" style="font-size:30px;color:rgba(37,211,102,0.2);"></i></div>
-                            <div class="info-content">
-                                <h4>WhatsApp</h4>
-                                <p><a href="https://wa.me/19543052351" target="_blank">+1 (954) 305-2351</a></p><span class="info-detail"><span class="status-dot"></span> Fast response during business hours</span>
-                            </div>
-                        </div>
-                        <!-- SOCIAL-LINKS-TODO: add the real LinkedIn/Instagram/Facebook URLs and uncomment this block.
-<div class="info-block social-block">
-                            <h4>Follow us:</h4>
-                            <div class="social-links"><a href="#" class="social-link" aria-label="LinkedIn"><span class="social-icon-box"><i class="icon ion-social-linkedin-outline" style="font-size:21px;"></i></span> LinkedIn </a><a href="#" class="social-link" aria-label="Instagram"><span class="social-icon-box"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16" style=""><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path></svg></span> Instagram </a><a href="#" class="social-link" aria-label="Facebook"><span class="social-icon-box"><i class="typcn typcn-social-facebook" style="font-size:21px;"></i></span> Facebook </a></div>
-                        </div>
--->
-                    </div>
+                    <template id="oc-err-generic">We could not send your request. Please try again, or write to us at <a href="mailto:info@ovisae.com">info@ovisae.com</a>.</template>
                 </div>
             </div>
         </div>
@@ -1199,6 +1170,7 @@
     <script src="assets/js/solicitarpresbutton.js"></script>
     <script src="assets/js/Swiper-Slider-Card-For-Blog-Or-Product-swiper.min.js"></script>
     <script src="assets/js/tiposdeproyectos.js"></script>
+    <script src="assets/js/contact-form.js"></script>
 </body>
 
 </html>
