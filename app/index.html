@@ -65,6 +65,10 @@
       var vals = {};
       KEYS.forEach(function (k) { var v = get(k); if (v) vals[k] = v; });
       ev.source.postMessage({ ovis: 'vals', vals: vals }, ev.origin);
+    } else if (d.ovis === 'paint') {
+      // The system finished loading a screen: hide the splash and make Android repaint the frame (it sometimes waited for a touch).
+      splash.className = 'gone';
+      frame.style.opacity = frame.style.opacity === '0.999' ? '1' : '0.999';
     } else if (d.ovis === 'set' && KEYS.indexOf(d.k) >= 0) {
       try { if (d.v === null || d.v === undefined) localStorage.removeItem(d.k); else localStorage.setItem(d.k, String(d.v)); } catch (e) {}
     }
