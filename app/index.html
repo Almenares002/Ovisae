@@ -46,7 +46,7 @@
 (function () {
   var BASE = 'https://script.google.com/macros/s/AKfycbzHxsiLfVioVeDpYow75D11b4i9-aWWs5YVrgBjn7CchlNxnCm0R69sjI03_c2PuDIu/exec?pwa=1';
   var KEYS = ["ovis_token", "ovis_email"];
-  var FWD = ['p'];
+  var FWD = ['p', 'lang'];   // ?lang=es|en opens the sign-in screen in that language (staff invitation link)
   var q = new URLSearchParams(location.search), src = BASE;
   FWD.forEach(function (k) { if (q.get(k)) src += '&' + k + '=' + encodeURIComponent(q.get(k)); });
   var splash = document.getElementById('splash'), frame = document.getElementById('app');
