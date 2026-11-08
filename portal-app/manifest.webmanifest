@@ -1,0 +1,36 @@
+{
+  "id": "/portal-app/",
+  "name": "OVIS Portal de clientes",
+  "short_name": "OVIS Portal",
+  "description": "Portal de clientes de OVIS A&E.",
+  "lang": "es",
+  "start_url": "/portal-app/?source=pwa",
+  "scope": "/portal-app/",
+  "display": "standalone",
+  "display_override": [
+    "standalone"
+  ],
+  "orientation": "any",
+  "background_color": "#2B2D30",
+  "theme_color": "#2B2D30",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
