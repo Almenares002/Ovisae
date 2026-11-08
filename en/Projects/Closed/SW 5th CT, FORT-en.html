@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="../../../assets/css/serviciosstyle.css">
     <link rel="stylesheet" href="../../../assets/css/solicitarpresbutton.css">
     <link rel="stylesheet" href="../../../assets/css/tiposdeproyecto.css">
+    <link rel="stylesheet" href="../../../assets/css/mobilemenu.css">
 </head>
 
 <body>
@@ -60,10 +61,23 @@
         <div class="container nav-container"><a href="../../../index.html" class="nav-logo"><img class="img-fluid" src="../../../assets/img/favicons/LogoOvis_white.png" width="177" height="48" style="transform:translateX(10px);"></a>
             <ul class="nav-menu">
                 <li><a href="../../../index.html" class="nav-link active">Home</a></li>
+                <li><a href="https://script.google.com/macros/s/AKfycbzHxsiLfVioVeDpYow75D11b4i9-aWWs5YVrgBjn7CchlNxnCm0R69sjI03_c2PuDIu/exec?portal=1&amp;lang=en" target="_blank" rel="noopener" class="nav-link">Client Portal</a></li>
             </ul>
             <div class="nav-actions"><a href="tel:+19543052351" class="nav-cta"><span style="background-color:initial;">+1 954 305 2351</span><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a><button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button></div>
         </div>
     </nav>
+    <div id="mobileMenu" class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li><a href="../../../index.html" class="mobile-link">Home</a></li>
+            <li><a href="../../../index.html#nosotrossec" class="mobile-link">About Us</a></li>
+            <li><a href="../../../index.html#serviciossec" class="mobile-link">Services</a></li>
+            <li><a href="../../../index.html#proyectossec" class="mobile-link">Projects</a></li>
+            <li><a href="../../../index.html#contacto" class="mobile-link">Contact</a></li>
+            <li><a href="https://script.google.com/macros/s/AKfycbzHxsiLfVioVeDpYow75D11b4i9-aWWs5YVrgBjn7CchlNxnCm0R69sjI03_c2PuDIu/exec?portal=1&amp;lang=en" target="_blank" rel="noopener" class="mobile-link">Client Portal</a></li>
+        </ul>
+        <div class="mobile-menu-footer"><a href="https://start.ovisae.com" target="_blank" rel="noopener" class="btn-portal-trigger">Request a Quote</a><a href="tel:+19543052351" class="mobile-link" style="text-align:center;">+1 954 305 2351</a></div>
+    </div>
+    <script>(function(){var t=document.getElementById('mobileToggle'),m=document.getElementById('mobileMenu');if(!t||!m||t.dataset.mm)return;t.dataset.mm=1;function c(){t.classList.remove('active');m.classList.remove('active');document.body.classList.remove('menu-open');document.body.style.overflow='';}t.addEventListener('click',function(e){e.stopImmediatePropagation();var o=!m.classList.contains('active');if(o){t.classList.add('active');m.classList.add('active');document.body.classList.add('menu-open');document.body.style.overflow='hidden';}else c();},true);document.addEventListener('click',function(e){if(m.classList.contains('active')&&!m.contains(e.target)&&!t.contains(e.target))c();});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',c);});})();</script>
     <section class="project-hero" style="background:url(&quot;../../../assets/img/Gallery/Closed/SW%205th%20CT,%20FORT/Photo%20Jul%2022%202026,%201%2021%2057%20PM.webp&quot;) center / cover;">
         <div class="hero-gradient-overlay"></div>
         <div class="container hero-content"><span class="project-badge">Residential</span>
