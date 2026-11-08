@@ -1,9 +1,16 @@
-// Quote buttons: open the OVIS intake form in a new tab.
+// Quote buttons: open the OVIS client portal (request menu) in a new tab.
 // The form is a Google Apps Script web app; embedded in an iframe it fails on
 // iPhone Safari and other browsers that block third-party cookies, so we no
 // longer open it inside the in-page modal.
 (function () {
-    var FORM_URL = "https://start.ovisae.com";
+    // Requests now go through the client portal's click-through request menu.
+    // Each page's own quote links already carry the right language (?lang=es|en);
+    // use the first of them, else the portal's default.
+    var FORM_URL = "https://ovisae.com/portal-app/";
+    function pickUrl() {
+        var a = document.querySelector('a[href^="https://ovisae.com/portal-app/"]');
+        if (a) FORM_URL = a.getAttribute('href');
+    }
 
     function openForm(e) {
         if (e) e.preventDefault();
@@ -12,6 +19,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        pickUrl();
         // Any button still wired to the old modal opens the form instead.
         document.querySelectorAll('[data-bs-target="#portalModal"]').forEach(function (el) {
             el.removeAttribute('data-bs-toggle');
