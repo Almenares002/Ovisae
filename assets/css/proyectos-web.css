@@ -1,0 +1,38 @@
+/* Proyectos en la web (OVIS Sistema v62): sección llenada desde el feed público de OVIS Sistema */
+.ow-sec{background:#2B2D30;color:#fff;padding:64px 0 72px;position:relative;overflow:hidden}
+.ow-sec .ow-wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.ow-pre{display:block;color:#ABCA41;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;text-align:center}
+.ow-title{font-size:clamp(26px,5vw,40px);font-weight:800;text-align:center;margin:8px 0 6px;color:#fff}
+.ow-sub{text-align:center;color:#c9ccd1;max-width:640px;margin:0 auto 26px;font-size:16px;line-height:1.5}
+.ow-bar{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:26px}
+.ow-tabs{display:inline-flex;background:#1f2023;border-radius:999px;padding:4px;gap:4px}
+.ow-tab{border:0;background:transparent;color:#d6d8dc;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;cursor:pointer;min-height:44px}
+.ow-tab.on{background:#ABCA41;color:#2B2D30}
+.ow-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.ow-f{border:1.5px solid #55585e;background:transparent;color:#e7e8ea;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.ow-f.on{border-color:#ABCA41;color:#ABCA41}
+.ow-grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:640px){.ow-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:992px){.ow-grid{grid-template-columns:repeat(3,1fr)}}
+.ow-card{background:#fff;color:#2B2D30;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s;border:0;padding:0;text-align:left;font:inherit;display:block;width:100%}
+.ow-card:hover{transform:translateY(-3px)}
+.ow-card:focus-visible{outline:3px solid #ABCA41;outline-offset:2px}
+.ow-img{position:relative;aspect-ratio:4/3;background:#e9ebe4;overflow:hidden}
+.ow-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ow-badge{position:absolute;left:12px;top:12px;background:#ABCA41;color:#2B2D30;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px}
+.ow-badge.st{left:auto;right:12px;background:rgba(43,45,48,.85);color:#fff}
+.ow-count{position:absolute;right:12px;bottom:12px;background:rgba(43,45,48,.8);color:#fff;font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px}
+.ow-body{padding:14px 16px 16px}
+.ow-body h3{font-size:18px;font-weight:800;margin:0 0 4px;color:#2B2D30}
+.ow-city{font-size:14px;color:#6b6f76;display:flex;align-items:center;gap:5px}
+.ow-desc{font-size:14px;color:#3d4046;margin:8px 0 0;line-height:1.45}
+.ow-empty{text-align:center;padding:42px 18px;border:1.5px dashed #55585e;border-radius:16px;color:#c9ccd1}
+.ow-empty b{display:block;color:#ABCA41;font-size:24px;margin-bottom:6px}
+.ow-lb{position:fixed;inset:0;background:rgba(18,19,21,.96);z-index:100000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 8px 70px}
+.ow-lb[hidden]{display:none}
+.ow-lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;user-select:none}
+.ow-lb .ow-x,.ow-lb .ow-nav{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;width:48px;height:48px;border-radius:50%;font-size:26px;line-height:48px;cursor:pointer;padding:0}
+.ow-lb .ow-x{top:10px;right:10px}
+.ow-lb .ow-prev{left:10px;top:50%;margin-top:-24px}.ow-lb .ow-next{right:10px;top:50%;margin-top:-24px}
+.ow-lb .ow-cap{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#e7e8ea;font-size:14px;padding:0 60px}
+.ow-lb .ow-cap b{color:#ABCA41}
