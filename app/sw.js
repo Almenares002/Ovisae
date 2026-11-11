@@ -1,6 +1,6 @@
 /* OVIS Sistema service worker: keeps only this small app shell (page, icons) so the app can open and show
    "Sin conexión" offline. The system itself (Google Apps Script) is never cached. */
-var CACHE = 'app-shell-v2';
+var CACHE = 'app-shell-v3';
 var SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));

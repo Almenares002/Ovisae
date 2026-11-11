@@ -30,7 +30,16 @@
   #off { display: none; color: #ABCA41; text-align: center; padding: 0 24px; }
   #splash.offline #off { display: block; }
   #splash.offline .bar, #splash.offline #msg { display: none; }
-  #off button { margin-top: 12px; background: #ABCA41; color: #2B2D30; border: 0; border-radius: 8px; padding: 10px 18px; font-weight: 600; font-size: 15px; }
+  #fail { display: none; color: #e8e8e8; text-align: center; padding: 0 24px; max-width: 340px; }
+  #splash.failed #fail { display: block; }
+  #splash.failed .bar, #splash.failed #msg { display: none; }
+  #fail small { display: block; color: #9a9a9a; margin-top: 6px; }
+  #fail .alt { background: transparent; color: #c9c9c9; border: 1px solid #5a5d61; font-weight: 500; font-size: 13px; margin-top: 10px; }
+  #nudge { display: none; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 3; background: #3a3d41; color: #e8e8e8; border-radius: 10px; padding: 10px 12px; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.4); align-items: center; gap: 10px; }
+  #nudge.on { display: flex; }
+  #nudge span { flex: 1; }
+  #nudge button { background: #ABCA41; color: #2B2D30; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 600; font-size: 14px; }
+  #off button, #fail button { margin-top: 12px; background: #ABCA41; color: #2B2D30; border: 0; border-radius: 8px; padding: 10px 18px; font-weight: 600; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -39,7 +48,9 @@
   <p id="msg">Cargando OVIS…</p>
   <div class="bar"><i></i></div>
   <div id="off">Sin conexión a internet.<br><button type="button" onclick="location.reload()">Reintentar</button></div>
+  <div id="fail">OVIS no terminó de cargar.<small>Revise la conexión y vuelva a intentar.</small><button type="button" id="failRetry">Reintentar</button><br><button type="button" class="alt" id="failReset">Reintentar e iniciar sesión de nuevo</button></div>
 </div>
+<div id="nudge" role="alert"><span>¿La pantalla no responde?</span><button type="button" id="nudgeRetry">Reintentar</button></div>
 <!-- credentialless: the system loads without the phone's Google accounts (like an incognito tab), which avoids Google's multi-account error page. -->
 <iframe id="app" title="OVIS Sistema" credentialless allow="clipboard-read; clipboard-write; camera; microphone; geolocation; fullscreen"></iframe>
 <script>
@@ -49,11 +60,48 @@
   var FWD = ['p', 'lang'];   // ?lang=es|en opens the sign-in screen in that language (staff invitation link)
   var q = new URLSearchParams(location.search), src = BASE;
   FWD.forEach(function (k) { if (q.get(k)) src += '&' + k + '=' + encodeURIComponent(q.get(k)); });
-  var splash = document.getElementById('splash'), frame = document.getElementById('app');
+  var splash = document.getElementById('splash'), frame = document.getElementById('app'), nudge = document.getElementById('nudge');
+  var hidden = false, loaded = false, alive = false, failT, nudgeT;
+  function setLS(k, v) { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function getLS(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  // Android (installed app) sometimes does not redraw until the screen is touched: keep producing frames for a moment.
+  function forceFrames(ms) {
+    var end = Date.now() + ms, n = 0;
+    function tick() { n++; frame.style.opacity = (n % 2) ? '0.999' : '1'; document.body.style.transform = (n % 2) ? 'translateZ(0)' : ''; if (Date.now() < end) { try { requestAnimationFrame(tick); } catch (e) { setTimeout(tick, 16); } } else { frame.style.opacity = '1'; document.body.style.transform = ''; } }
+    tick(); setTimeout(function () { void document.body.offsetHeight; window.scrollTo(0, 0); }, 50);
+  }
+  function hideSplash() {
+    clearTimeout(failT);
+    if (!hidden) { hidden = true; splash.className = 'gone'; splash.style.display = 'none'; void document.body.offsetHeight; }
+    forceFrames(1500);
+  }
+  function retry(clearSession) {
+    if (clearSession) { KEYS.forEach(function (k) { setLS(k, null); }); }
+    var u = location.pathname + '?r=' + Date.now(); FWD.forEach(function (k) { if (q.get(k)) u += '&' + k + '=' + encodeURIComponent(q.get(k)); });
+    location.replace(u);
+  }
+  // Safety net: if the system has not shown up after 20 s, stop the loader and offer «Reintentar».
+  // After 3 failed opens in a row the saved session is cleared, in case it is what blocks the start.
+  function fail() {
+    if (hidden || !navigator.onLine) return;
+    var n = Number(getLS('ovis_fail') || 0) + 1; setLS('ovis_fail', String(n));
+    if (n >= 3) { KEYS.forEach(function (k) { setLS(k, null); }); setLS('ovis_fail', null); }
+    splash.className = 'failed'; forceFrames(800);
+  }
+  document.getElementById('failRetry').onclick = function () { retry(false); };
+  document.getElementById('failReset').onclick = function () { setLS('ovis_fail', null); retry(true); };
+  document.getElementById('nudgeRetry').onclick = function () { retry(false); };
   if (!navigator.onLine) splash.className = 'offline';
-  frame.addEventListener('load', function () { setTimeout(function () { splash.className = 'gone'; }, 600); });
+  failT = setTimeout(fail, 20000);
+  frame.addEventListener('load', function () {
+    loaded = true; setTimeout(hideSplash, 600);
+    // The frame loaded but the system never answered (e.g. a Google error page): offer a retry without covering the page.
+    nudgeT = setTimeout(function () { if (!alive) { nudge.className = 'on'; forceFrames(500); } }, 20000);
+  });
   frame.src = src;
   window.addEventListener('online', function () { if (splash.className === 'offline') location.reload(); });
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') { if (loaded || alive) hideSplash(); else forceFrames(500); } });
+  window.addEventListener('pageshow', function () { if (loaded || alive) hideSplash(); });
 
   // Session bridge: the system's own page (served from *.googleusercontent.com) asks for / saves its login here.
   var OK = /^https:\/\/[a-z0-9-]+\.googleusercontent\.com$/;
@@ -61,14 +109,14 @@
   window.addEventListener('message', function (ev) {
     var d = ev.data;
     if (!OK.test(ev.origin) || !d || typeof d !== 'object' || !ev.source) return;
+    if (!alive) { alive = true; clearTimeout(nudgeT); nudge.className = ''; setLS('ovis_fail', null); setTimeout(hideSplash, 1500); }   // the system is running
     if (d.ovis === 'get') {
       var vals = {};
       KEYS.forEach(function (k) { var v = get(k); if (v) vals[k] = v; });
       ev.source.postMessage({ ovis: 'vals', vals: vals }, ev.origin);
     } else if (d.ovis === 'paint') {
       // The system finished loading a screen: hide the splash and make Android repaint the frame (it sometimes waited for a touch).
-      splash.className = 'gone';
-      frame.style.opacity = frame.style.opacity === '0.999' ? '1' : '0.999';
+      hideSplash();
     } else if (d.ovis === 'set' && KEYS.indexOf(d.k) >= 0) {
       try { if (d.v === null || d.v === undefined) localStorage.removeItem(d.k); else localStorage.setItem(d.k, String(d.v)); } catch (e) {}
     }
