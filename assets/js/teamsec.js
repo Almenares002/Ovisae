@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.next-arrow');
     const totalCards = cards.length;
     
-    // Empezamos en la carta central (índice 4 de 0 a 8)
-    let activeIndex = 4; 
+    // Empezamos en la carta de Pablo (índice 5 de 0 a 9)
+    let activeIndex = 5; 
 
     // Función para actualizar las posiciones del carrusel
     function updateCarousel() {
